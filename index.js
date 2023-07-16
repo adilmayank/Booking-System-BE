@@ -10,6 +10,8 @@ const MONGO_USERNAME = process.env.MONGODB_USERNAME
 const MONGO_PASSWORD = process.env.MONGODB_PASSWORD
 const CONNECTION_STRING = `mongodb+srv://${MONGO_USERNAME}:${MONGO_PASSWORD}@cluster0.zhbk7gt.mongodb.net/?retryWrites=true&w=majority`
 
+
+// adding localhost and deployed front end origin for cors policy
 app.use(
   cors({
     origin: [

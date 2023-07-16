@@ -15,6 +15,4 @@ router.post('/api/v1/booking', BookingController.bookTickets)
 router.delete("/api/v1/booking", BookingController.removeBookings)
 
 
-// router.get('/api/v1/createUsers', booking.createUsers)
-
 module.exports = {router}
