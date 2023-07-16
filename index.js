@@ -12,7 +12,10 @@ const CONNECTION_STRING = `mongodb+srv://${MONGO_USERNAME}:${MONGO_PASSWORD}@clu
 
 app.use(
   cors({
-    origin: ['https://booking-system-fe-oz52.onrender.com'],
+    origin: [
+      'https://booking-system-fe-oz52.onrender.com',
+      'http://localhost:5173',
+    ],
   })
 )
 
