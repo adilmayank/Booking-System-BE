@@ -10,7 +10,11 @@ const MONGO_USERNAME = process.env.MONGODB_USERNAME
 const MONGO_PASSWORD = process.env.MONGO_PASSWORD
 const CONNECTION_STRING = `mongodb+srv://${MONGO_USERNAME}:${MONGO_PASSWORD}@cluster0.zhbk7gt.mongodb.net/?retryWrites=true&w=majority`
 
-app.use(cors())
+app.use(
+  cors({
+    origin: ['https://booking-system-fe-oz52.onrender.com/'],
+  })
+)
 
 app.use(express.json())
 
