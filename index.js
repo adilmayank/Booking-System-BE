@@ -6,6 +6,9 @@ const app = express()
 const { router: BookingRouter } = require('./Router/Booking')
 
 const PORT = process.env.PORT || 5000
+const MONGO_USERNAME = process.env.MONGODB_USERNAME
+const MONGO_PASSWORD = process.env.MONGO_PASSWORD
+const CONNECTION_STRING = `mongodb+srv://${MONGO_USERNAME}:${MONGO_PASSWORD}@cluster0.zhbk7gt.mongodb.net/?retryWrites=true&w=majority`
 
 app.use(cors())
 
@@ -15,9 +18,7 @@ app.use(BookingRouter)
 
 app.listen(PORT, async () => {
   try {
-    await mongoose.connect(
-      `mongodb+srv://adilmayank5894:${process.env.MONGODB_PASSWORD}@cluster0.zhbk7gt.mongodb.net/?retryWrites=true&w=majority`
-    )
+    await mongoose.connect(CONNECTION_STRING)
     console.log(`Connected to DB. Listening to port: ${PORT}`)
   } catch (error) {
     console.log(error)
