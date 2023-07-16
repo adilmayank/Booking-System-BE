@@ -5,7 +5,7 @@ const mongoose = require('mongoose')
 const app = express()
 const { router: BookingRouter } = require('./Router/Booking')
 
-const PORT = 5000
+const PORT = process.env.PORT || 5000
 
 app.use(cors())
 
